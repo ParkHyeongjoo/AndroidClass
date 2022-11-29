@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Ex20221129</string>
+
+    <string-array name="board">
+        <item>1. Android 꿀잼</item>
+        <item>2. 자연쌤 이쁘다</item>
+        <item>3. 태양쌤 바보</item>
+        <item>4. 예호쌤 고수</item>
+        <item>5. 스마트인재개발원</item>
+    </string-array>
+</resources>
