@@ -1,10 +1,13 @@
 package com.example.ex20221130
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 
@@ -34,7 +37,7 @@ class PhoneAdapter(val context: Context, val layout: Int, val data: ArrayList<Ph
         return p0.toLong()
     }
 
-    //    ⭐☆★*
+    //    ☆☆☆☆☆
     override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
 //        data + template 합친 뷰를 return 해주자
 
@@ -58,5 +61,27 @@ class PhoneAdapter(val context: Context, val layout: Int, val data: ArrayList<Ph
         val tvName = view?.findViewById<TextView>(R.id.tvName)
         val tvTel = view?.findViewById<TextView>(R.id.tvTel)
         val img = view?.findViewById<ImageView>(R.id.img)
+        val btnCall = view?.findViewById<Button>(R.id.btnCall)
+
+//        ArrayList --> data --> (id, name, tel)
+        tvName?.text = data[p0].name
+        tvTel?.text = data[p0].tel
+        img?.setImageResource(data[p0].imgId)
+        btnCall?.setOnClickListener {
+//            해당 전화번를 가져와서 ACTION_DIAL이 실행되게 만들자
+//            ACTION, DATA(URi -> tel: )
+            var tel = Uri.parse("tel:${tvTel?.text.toString()}")
+            val intent = Intent(Intent.ACTION_DIAL, tel)
+
+//            새로운 Task(Stack 통)을 만들어서 실행
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+
+//            Activity 의 힘을 빌려서 Start 할 예정
+//            Activity 의 힘 : context
+            context.startActivity(intent)
+        }
+
+//        inflate 가 된 view를 return (data + template)
+        return view!!
     }
 }
