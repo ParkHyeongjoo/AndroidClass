@@ -14,14 +14,11 @@ class AddActivity : AppCompatActivity() {
         val etWeb = findViewById<EditText>(R.id.etWeb)
         val etUrl = findViewById<EditText>(R.id.etUrl)
         val btnAdd2 = findViewById<Button>(R.id.btnAdd2)
-//        var webList = ArrayList<WebVO>()
 
         btnAdd2.setOnClickListener {
 
             var web = etWeb.text.toString()
             var url = etUrl.text.toString()
-
-//            webList.add(WebVO(web, url))
 
             val intent = Intent()
 

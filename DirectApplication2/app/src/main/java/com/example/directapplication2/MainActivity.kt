@@ -11,6 +11,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 class MainActivity : AppCompatActivity() {
 
     var webList = ArrayList<WebVO>()
+    lateinit var adapter : WebAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         val lv = findViewById<ListView>(R.id.lv)
         val btnAdd = findViewById<Button>(R.id.btnAdd)
 
-        val adapter = WebAdapter(
+        adapter = WebAdapter(
             applicationContext,
             R.layout.web_list,
             webList
@@ -30,8 +31,6 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, AddActivity::class.java)
 
             launcher.launch(intent)
-
-            adapter.notifyDataSetChanged()
         }
     }
 
@@ -39,12 +38,16 @@ class MainActivity : AppCompatActivity() {
         Log.d("data", it.data?.getStringExtra("web").toString())
         Log.d("data", it.data?.getStringExtra("url").toString())
 
-        if(it.resultCode == RESULT_OK){
+        if (it.resultCode == RESULT_OK) {
 
-        var web = it.data?.getStringExtra("web").toString()
-        var url = it.data?.getStringExtra("url").toString()
+            var web = it.data?.getStringExtra("web").toString()
+            var url = it.data?.getStringExtra("url").toString()
 
-        webList.add(WebVO(web, url))
+            webList.add(WebVO(web, url))
+
+            adapter.notifyDataSetChanged()
         }
     }
+
+
 }
