@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         val lv = findViewById<ListView>(R.id.lv)
         val btnAdd = findViewById<Button>(R.id.btnAdd)
 
+//        val adapter = WebAdapter(
         adapter = WebAdapter(
             applicationContext,
             R.layout.web_list,
@@ -31,6 +32,8 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, AddActivity::class.java)
 
             launcher.launch(intent)
+
+//            adapter.notifyDataSetChanged()
         }
     }
 

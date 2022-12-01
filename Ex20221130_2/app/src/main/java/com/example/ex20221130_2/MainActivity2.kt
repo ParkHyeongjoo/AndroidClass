@@ -59,9 +59,9 @@ class MainActivity2 : AppCompatActivity() {
         rvPoke.adapter = adapter
 //        5-2) 내가 구현하고 하는 모양에 맞는
 //        layoutManager 를 결정
-        rvPoke.layoutManager = LinearLayoutManager(this)
+//        rvPoke.layoutManager = LinearLayoutManager(this)
 //        Grid 쌓기
-//        rvPoke.layoutManager = GridLayoutManager(this, 2)
+        rvPoke.layoutManager = GridLayoutManager(this, 2)
 
     }
 }

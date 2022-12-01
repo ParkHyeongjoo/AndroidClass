@@ -6,43 +6,46 @@
     android:layout_height="wrap_content"
     android:padding="8dp">
 
-    <ImageView
+    <ImageButton
         android:id="@+id/imgPoke"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:scaleType="fitCenter"
+        android:background="#00000000"
         app:layout_constraintBottom_toBottomOf="@+id/tvPokeType"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvPokeLv"
-        app:srcCompat="@drawable/p3" />
+        app:layout_constraintTop_toTopOf="@+id/tvPokeLv" />
 
     <TextView
         android:id="@+id/tvPokeLv"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="4dp"
         android:text="LV"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgPoke"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvPokeName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="name"
-        app:layout_constraintEnd_toEndOf="@+id/tvPokeLv"
-        app:layout_constraintStart_toStartOf="@+id/tvPokeLv"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgPoke"
         app:layout_constraintTop_toBottomOf="@+id/tvPokeLv" />
 
     <TextView
         android:id="@+id/tvPokeType"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="type"
-        app:layout_constraintEnd_toEndOf="@+id/tvPokeName"
-        app:layout_constraintStart_toStartOf="@+id/tvPokeName"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgPoke"
         app:layout_constraintTop_toBottomOf="@+id/tvPokeName" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clMovie"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp">
+
+    <TextView
+        android:id="@+id/tvRank"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#FDC5C5"
+        android:gravity="center"
+        android:text="rank"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="관객수"
+        app:layout_constraintEnd_toEndOf="@+id/tvRank"
+        app:layout_constraintStart_toStartOf="@+id/tvRank"
+        app:layout_constraintTop_toBottomOf="@+id/tvRank" />
+
+    <TextView
+        android:id="@+id/tvAudiAcc"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="#FFD0D0"
+        android:paddingLeft="10sp"
+        android:text="AudiAcc"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:text="개봉일자 : "
+        app:layout_constraintStart_toEndOf="@+id/tvAudiAcc"
+        app:layout_constraintTop_toTopOf="@+id/tvAudiAcc" />
+
+    <TextView
+        android:id="@+id/tvOpenDt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#FDB8B8"
+        android:text="openDt"
+        app:layout_constraintStart_toEndOf="@+id/textView10"
+        app:layout_constraintTop_toTopOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/tvOldAndNew"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10sp"
+        android:text="OldAndNew"
+        app:layout_constraintStart_toEndOf="@+id/tvRank"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10sp"
+        android:text="title"
+        app:layout_constraintBottom_toBottomOf="@+id/tvRank"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvOldAndNew"
+        app:layout_constraintTop_toBottomOf="@+id/tvOldAndNew" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.ImageView
+import android.widget.ImageButton
 import android.widget.TextView
 
 class PokeAdapter(val context: Context, val pokeList: ArrayList<PokeVO>) : BaseAdapter() {
@@ -24,7 +24,7 @@ class PokeAdapter(val context: Context, val pokeList: ArrayList<PokeVO>) : BaseA
         return p0.toLong()
     }
 
-    //    ★★★★★
+    //    🌟🌟🌟🌟🌟
 //    p0 : position
 //    p1 : itemView
     override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
@@ -39,7 +39,7 @@ class PokeAdapter(val context: Context, val pokeList: ArrayList<PokeVO>) : BaseA
             Log.d("호출", "1")
 //            항목 뷰(itemView)가 안 만들어졌을 때!
 //            각 component들을 초기화 시켜주자
-            holder.imgPoke = view.findViewById<ImageView>(R.id.imgPoke)
+            holder.imgPoke = view.findViewById<ImageButton>(R.id.imgPoke)
             holder.tvPokeType = view.findViewById<TextView>(R.id.tvPokeType)
             holder.tvPokeLv = view.findViewById<TextView>(R.id.tvPokeLv)
             holder.tvPokeName = view.findViewById<TextView>(R.id.tvPokeName)
@@ -52,7 +52,7 @@ class PokeAdapter(val context: Context, val pokeList: ArrayList<PokeVO>) : BaseA
             view = p1
         }
 
-        /*  val imgPoke = view.findViewById<ImageView>(R.id.imgPoke)
+        /*  val imgPoke = view.findViewById<ImageButton>(R.id.imgPoke)
           val tvPokeLv = view.findViewById<TextView>(R.id.tvPokeLv)
           val tvPokeName = view.findViewById<TextView>(R.id.tvPokeName)
           val tvPokeType = view.findViewById<TextView>(R.id.tvPokeType)*/
@@ -78,7 +78,7 @@ class PokeAdapter(val context: Context, val pokeList: ArrayList<PokeVO>) : BaseA
 //    메모리의 성능을 향상시키자!!
 
     class ViewHolder() {
-        var imgPoke: ImageView? = null
+        var imgPoke: ImageButton? = null
         var tvPokeLv: TextView? = null
         var tvPokeName: TextView? = null
         var tvPokeType: TextView? = null
