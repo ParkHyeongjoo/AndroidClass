@@ -21,8 +21,8 @@ class ColorAdapter(val context: Context, val colorList: ArrayList<ColorVO>) :
             itemView.setOnClickListener {
                 val position = adapterPosition
                 val color = colorList[position].color
-                val sharedPreferences = context.getSharedPreferences("sp1", Context.MODE_PRIVATE)
 
+                val sharedPreferences = context.getSharedPreferences("sp1", Context.MODE_PRIVATE)
                 val editor = sharedPreferences.edit()
                 editor.putString("bgColor", color)
                 editor.commit()
