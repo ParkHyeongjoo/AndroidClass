@@ -4,8 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
@@ -25,10 +25,18 @@ class MovieActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie)
 
-        val btnMovie = findViewById<Button>(R.id.btnMovie)
+//        Volley를 통한 네트워크 통신 4단계
+//        1. Volley 설정
+//          - Volley 라이브러리 추가
+//          - Manifest 에 Permission 추가
+//        2. RequestQueue 생성
+//        3. Request 생성
+//        4. RequestQueue 에 Request 추가
 
 //        1. Container 결정
-        val rcMovie = findViewById<RecyclerView>(R.id.rcMovie)
+        val rvMovie = findViewById<RecyclerView>(R.id.rvMovie)
+        val btnMovie = findViewById<Button>(R.id.btnMovie)
+        val etInput = findViewById<EditText>(R.id.etInput)
 
 //        2. ListView 결정
 //        movie_list.xml
@@ -43,8 +51,8 @@ class MovieActivity : AppCompatActivity() {
         )
 
 //        5. Adapter 연결
-        rcMovie.adapter = adapter
-        rcMovie.layoutManager = LinearLayoutManager(this)
+        rvMovie.adapter = adapter
+        rvMovie.layoutManager = LinearLayoutManager(this)
 
 //        6. Event 처리
 
@@ -54,9 +62,10 @@ class MovieActivity : AppCompatActivity() {
 //        btnMovie를 클릭했을 때 영화정보를 (response) Log로 확인해보자
         btnMovie.setOnClickListener {
             Log.d("되냐", "1")
-
+            movies.clear()
+            val date = etInput.text.toString()
             val url =
-                "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=20221130"
+                "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt=$date"
 
             request = StringRequest(
 //                1. get / post
@@ -65,6 +74,7 @@ class MovieActivity : AppCompatActivity() {
                 url,
 //                3. 응답 성공시 Listener
                 { response ->
+                    Log.d("되냐", "2")
 //                    응답 받아온 response : String
                     val json1 = JSONObject(response)
 //                    Log.d("json1 : ", json1.toString())
@@ -76,10 +86,11 @@ class MovieActivity : AppCompatActivity() {
                     /*val movie = json3.getJSONObject(0)
                     val rank = movie.getString("rank")
                     Log.d("rank", rank)*/
+
                     Log.d("for문", json3.length().toString())
 
                     for (i in 0 until json3.length()) {
-                    Log.d("for문", "2")
+                        Log.d("되냐", "3")
                         val movie = json3.getJSONObject(i)
 //                        rank
                         var rank = movie.getString("rank")
@@ -98,15 +109,17 @@ class MovieActivity : AppCompatActivity() {
                         Log.d("for문", openDt)
 
                         movies.add(MovieVO(rank, rankOldAndNew, movieNm, audiAcc, openDt))
-                        adapter.notifyDataSetChanged()
                     }
+                    Log.d("되냐", "5")
+                    adapter.notifyDataSetChanged()
 
                 },
 //                4. 응답 실패시
                 { error ->
-                    Toast.makeText(this, "Error",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
                 }
             )
+            Log.d("되냐", "4")
             queue?.add(request)
 
         }

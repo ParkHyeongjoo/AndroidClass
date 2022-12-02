@@ -7,7 +7,7 @@
     tools:context=".MovieActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcMovie"
+        android:id="@+id/rvMovie"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/btnMovie"
@@ -19,8 +19,20 @@
         android:id="@+id/btnMovie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
         android:text="영화정보 요청"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/rcMovie"
-        app:layout_constraintStart_toStartOf="@+id/rcMovie" />
+        app:layout_constraintEnd_toEndOf="@+id/rvMovie" />
+
+    <EditText
+        android:id="@+id/etInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="날짜 입력 : Ex) 20221201"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnMovie"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnMovie" />
 </androidx.constraintlayout.widget.ConstraintLayout>

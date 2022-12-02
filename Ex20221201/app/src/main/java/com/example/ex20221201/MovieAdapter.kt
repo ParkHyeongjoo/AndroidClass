@@ -14,8 +14,6 @@ class MovieAdapter(val context: Context, val movieList: ArrayList<MovieVO>) :
     RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val clMovie: ConstraintLayout
-
         val tvRank: TextView
         val tvOldAndNew: TextView
         val tvAudiAcc: TextView
@@ -23,7 +21,6 @@ class MovieAdapter(val context: Context, val movieList: ArrayList<MovieVO>) :
         val tvTitle: TextView
 
         init{
-            clMovie = itemView.findViewById(R.id.clMovie)
             tvRank = itemView.findViewById(R.id.tvRank)
             tvOldAndNew = itemView.findViewById(R.id.tvOldAndNew)
             tvAudiAcc = itemView.findViewById(R.id.tvAudiAcc)
