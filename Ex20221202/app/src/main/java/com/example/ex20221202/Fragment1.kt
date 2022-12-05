@@ -36,6 +36,7 @@ class Fragment1 : Fragment() {
 //        4. WebView 에 1.주소 적용
 //        wv.loadUrl(url)
 
+
         val sharedPreferences = requireActivity().getSharedPreferences("sp1", Context.MODE_PRIVATE)
         val url: String? = sharedPreferences.getString("url", "https://smhrd.or.kr/")
         wv.loadUrl(url!!)
