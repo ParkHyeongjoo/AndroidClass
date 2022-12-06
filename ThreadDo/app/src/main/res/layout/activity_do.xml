@@ -108,7 +108,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="64dp"
         android:text="두더지게임"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -131,9 +131,20 @@
         android:id="@+id/btnStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="24dp"
         android:text="게임 시작"
         app:layout_constraintEnd_toEndOf="@+id/tvScore"
         app:layout_constraintStart_toStartOf="@+id/tvScore"
         app:layout_constraintTop_toBottomOf="@+id/tvScore" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="남은 시간 : 30초"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnStart"
+        app:layout_constraintStart_toStartOf="@+id/btnStart"
+        app:layout_constraintTop_toBottomOf="@+id/btnStart" />
 </androidx.constraintlayout.widget.ConstraintLayout>
