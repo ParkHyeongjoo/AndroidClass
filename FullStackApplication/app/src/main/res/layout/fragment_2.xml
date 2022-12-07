@@ -23,21 +23,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/main_icon_all" />
+            android:src="@drawable/main_icon_all"
+            android:tag="전체보기" />
 
         <ImageView
             android:id="@+id/imgCook"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/main_icon_cook" />
+            android:src="@drawable/main_icon_cook"
+            android:tag="요리레시피" />
 
         <ImageView
             android:id="@+id/imgLife"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/main_icon_else" />
+            android:src="@drawable/main_icon_else"
+            android:tag="생활" />
 
     </LinearLayout>
 
@@ -52,7 +55,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/tvAll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -61,7 +64,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/tvCook"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -70,7 +73,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/tvLife"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"

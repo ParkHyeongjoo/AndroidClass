@@ -1,6 +1,6 @@
 package com.example.ex20221202
 
-class WeatherVO(
+data class WeatherVO(
     val city: String,
     val state: String,
     val temp: String,

@@ -1,4 +1,4 @@
 package com.example.ex20221201
 
-class ColorVO(val color:String) {
+data class ColorVO(val color:String) {
 }

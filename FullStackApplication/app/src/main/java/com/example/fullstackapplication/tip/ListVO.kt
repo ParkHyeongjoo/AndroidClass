@@ -3,5 +3,5 @@ package com.example.fullstackapplication.tip
 import android.widget.ImageView
 import android.widget.TextView
 
-class ListVO(val img: Int, val tv: String, val imgMark: Int) {
+data class ListVO(val img: String, val tv: String, val url: String, val category: String) {
 }

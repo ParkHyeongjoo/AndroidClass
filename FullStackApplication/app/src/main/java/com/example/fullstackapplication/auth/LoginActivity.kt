@@ -1,5 +1,6 @@
 package com.example.fullstackapplication.auth
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -20,9 +21,16 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        val sharedPreferences = getSharedPreferences("autoLogin", Context.MODE_PRIVATE)
+        val loginId = sharedPreferences.getString("loginId", "")
+        val loginPw = sharedPreferences.getString("loginPw", "")
+
         val etLoginEmail = findViewById<EditText>(R.id.etLoginEmail)
         val etLoginPw = findViewById<EditText>(R.id.etLoginPw)
         val btnLoginLogin = findViewById<Button>(R.id.btnLoginLogin)
+
+        etLoginEmail.setText(loginId)
+        etLoginPw.setText(loginPw)
 
         // Initialize Firebase Auth
         auth = Firebase.auth
@@ -38,6 +46,12 @@ class LoginActivity : AppCompatActivity() {
 //                    로그인 성공
                     Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
+
+                    val editor = sharedPreferences.edit()
+                    editor.putString("loginId", email)
+                    editor.putString("loginPw", pw)
+                    editor.commit()
+
                     startActivity(intent)
                     finish()
                 }else{

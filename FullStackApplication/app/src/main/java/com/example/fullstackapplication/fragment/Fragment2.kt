@@ -25,6 +25,17 @@ class Fragment2 : Fragment() {
 
         imgAll.setOnClickListener {
             val intent = Intent(view.context, ListActivity::class.java)
+            intent.putExtra("category", imgAll.tag.toString())
+            startActivity(intent)
+        }
+        imgCook.setOnClickListener {
+            val intent = Intent(view.context, ListActivity::class.java)
+            intent.putExtra("category", imgCook.tag.toString())
+            startActivity(intent)
+        }
+        imgLife.setOnClickListener {
+            val intent = Intent(view.context, ListActivity::class.java)
+            intent.putExtra("category", imgLife.tag.toString())
             startActivity(intent)
         }
 

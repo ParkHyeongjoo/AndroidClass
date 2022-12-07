@@ -1,6 +1,6 @@
 package com.example.ex20221201
 
-class MovieVO(
+data class MovieVO(
     var rank: String,
     var rankOldAndNew: String,
     var movieNm: String,
