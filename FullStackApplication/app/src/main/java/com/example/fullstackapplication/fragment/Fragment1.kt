@@ -38,7 +38,7 @@ class Fragment1 : Fragment() {
         val etName = view.findViewById<EditText>(R.id.etName)
         val btnSend = view.findViewById<Button>(R.id.btnSend)
 
-        val yehoUrl = "http://android-project-yeho-default-redb.firebaseio.com/"
+        val yehoUrl = "https://iotchat-188fe-default-rtdb.firebaseio.com/"
         val yehoDB = Firebase.database(yehoUrl)
         val phj = yehoDB.getReference("JParkBro")
 

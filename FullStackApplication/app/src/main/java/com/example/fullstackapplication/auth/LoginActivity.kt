@@ -25,6 +25,9 @@ class LoginActivity : AppCompatActivity() {
         val loginId = sharedPreferences.getString("loginId", "")
         val loginPw = sharedPreferences.getString("loginPw", "")
 
+        val sp = getSharedPreferences("loginInfo", Context.MODE_PRIVATE)
+        val loginName = sp.getString("loginId", "null")
+
         val etLoginEmail = findViewById<EditText>(R.id.etLoginEmail)
         val etLoginPw = findViewById<EditText>(R.id.etLoginPw)
         val btnLoginLogin = findViewById<Button>(R.id.btnLoginLogin)
@@ -51,6 +54,10 @@ class LoginActivity : AppCompatActivity() {
                     editor.putString("loginId", email)
                     editor.putString("loginPw", pw)
                     editor.commit()
+
+                    val spEditor = sp.edit()
+                    spEditor.putString("loginId", email)
+                    spEditor.commit()
 
                     startActivity(intent)
                     finish()

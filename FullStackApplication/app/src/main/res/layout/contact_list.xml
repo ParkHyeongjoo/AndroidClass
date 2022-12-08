@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imgContactProfile"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_person_24" />
+
+    <TextView
+        android:id="@+id/tvContactName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:text="박형주"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/imgContactProfile"
+        app:layout_constraintTop_toTopOf="@+id/imgContactProfile" />
+
+    <TextView
+        android:id="@+id/tvContactAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="136dp"
+        android:text="31세"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvContactName"
+        app:layout_constraintStart_toEndOf="@+id/imgContactProfile"
+        app:layout_constraintTop_toTopOf="@+id/tvContactName" />
+
+    <TextView
+        android:id="@+id/tvContactNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="8dp"
+        android:text="010-7578-0324"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgContactProfile"
+        app:layout_constraintStart_toEndOf="@+id/imgContactProfile" />
+
+    <ImageButton
+        android:id="@+id/btnContactCall"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="240dp"
+        android:background="@drawable/button_radius_maincolor"
+        app:layout_constraintBottom_toBottomOf="@+id/tvContactNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgContactProfile"
+        app:layout_constraintTop_toTopOf="@+id/tvContactAge"
+        app:srcCompat="@drawable/ic_baseline_phone_24" />
+</androidx.constraintlayout.widget.ConstraintLayout>
