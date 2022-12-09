@@ -37,7 +37,9 @@
         android:id="@+id/imgBoardAdd"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="@+id/etBoardContent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/etBoardContent"
         app:layout_constraintTop_toTopOf="@+id/guideline5"
         app:srcCompat="@drawable/ic_baseline_add_circle_outline_24" />

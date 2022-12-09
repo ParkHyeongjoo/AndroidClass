@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".board.BoardInsideActivity">
+
+    <TextView
+        android:id="@+id/tvInTitle"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/mainColor"
+        android:gravity="center"
+        android:text="제목"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvInTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="시간"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInTitle" />
+
+    <TextView
+        android:id="@+id/tvInContent"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#DCDCDC"
+        android:text="화성 갈끄니까"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvInTime"
+        app:layout_constraintTop_toBottomOf="@+id/tvInTime" />
+
+    <ImageView
+        android:id="@+id/imgIn"
+        android:layout_width="0dp"
+        android:layout_height="220dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvInContent"
+        app:layout_constraintStart_toStartOf="@+id/tvInContent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInContent"
+        app:srcCompat="@drawable/profile" />
+</androidx.constraintlayout.widget.ConstraintLayout>
